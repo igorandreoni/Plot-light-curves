@@ -21,3 +21,15 @@ Optional arguments:
   -o OUTPUT_FILENAME  Output light curve file name if saved (-s)
   
   -t PLOT_TITLE       Plot title
+  
+  -yl Y_LABEL         Y axis label
+  
+
+Example 1:
+python plotlightcurve.py -i examples/variable1.lc -s True -o variable_star.png -yl "magnitude (g)"
+
+Example 2:
+python plotlightcurve.py -i examples/variable2.lc -s y -o new_variable_star.png
+
+Example 3:
+python plotlightcurve.py -i examples/flare1.lc -t "Nice flare"

@@ -12,7 +12,7 @@ import argparse
 
 
 #Function fo plot the results
-def plotlc(resultsname, output_filename,plot_title, saveplot=False, numfig=1):
+def plotlc(resultsname, output_filename,plot_title,y_label, saveplot=False, numfig=1):
 	
 	#Hack to ignore the intial and final apostrophes
 	if resultsname[0]=="'":
@@ -151,7 +151,7 @@ def plotlc(resultsname, output_filename,plot_title, saveplot=False, numfig=1):
 	plt.plot(time, magarr, 'bo',color='black')
 	plt.plot(time, ularr, "rv")
 	plt.xlabel(timename, fontsize=19)
-	plt.ylabel('g mag', fontsize=19)
+	plt.ylabel(y_label, fontsize=19)
 	plt.axis([xmin,xmax,ymin,ymax])
 	plt.tick_params(labelsize=18)
 	##titlename0=resultsname.replace(".txt", "")
@@ -182,9 +182,10 @@ def main(args):
 	output_filename=args.output_filename
 	saveornot=args.saveornot
 	plot_title=args.plot_title
+	y_label=args.y_label
 	
 	#Call the plotting function
-	plotlc(input_filename,output_filename,plot_title,saveplot=saveornot,numfig=1)
+	plotlc(input_filename,output_filename,plot_title,y_label,saveplot=saveornot,numfig=1)
 
 
 if __name__ == "__main__":
@@ -202,6 +203,8 @@ if __name__ == "__main__":
     help='Output light curve file name if saved (-s) ')
     parser.add_argument('-t', dest='plot_title', type=str, required=False, default=' ', \
     help='Plot title')
+    parser.add_argument('-yl', dest='y_label', type=str, required=False, default='g mag', \
+    help='Y axis label')
 	    
     args = parser.parse_args()
 
