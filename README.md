@@ -24,6 +24,7 @@ Optional arguments:
   
   -yl Y_LABEL         Y axis label
   
+Example light curves can be found in the examples/ folder. Data acquired during "Deeper, Wider, Faster" program observations: https://ui.adsabs.harvard.edu//#abs/2018arXiv180201100A/abstract 
 
 Example 1:
 python plotlightcurve.py -i examples/variable1.lc -s True -o variable_star.png -yl "magnitude (g)"
